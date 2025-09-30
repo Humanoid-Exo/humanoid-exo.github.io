@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="description"
+        content="The Web of NuExo">
+  <meta name="keywords" content="HumanoidExo,humanoidexo,Humanoidexo,Exoskeleton,Humanoid Robot Systems">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="google-site-verification" content="VGdVNUlXN6AZ_wpqNh4hsvLMULoIUrBs2pE6ZBVsb9c" /> -->
+  <title>HumanoidExo: Scalable Whole-Body Humanoid  Manipulation via Wearable Exoskeleton</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <script src="static/js/jquery-3.7.1.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+
+
+  <style>
+        .navbar-menu {
+            background-color: rgba(128, 128, 128, 0.3);
+        }
+        .hero-video {
+          background-color: black;
+        }
+        .blue-text {
+            color: rgb(25, 106, 226);
+        }
+        .green-text {
+            color: rgb(0, 116, 124);
+        }
+        .yellow-text {
+            color: rgb(202, 138, 0);
+        }
+
+
+</style>
+</head>
+
+
+<body>
+  <section class="hero is-link is-fullheight video" style="overflow: hidden;">
+  <div class="hero-video" style="
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ">
+    <video playsinline autoplay muted loop style="
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    ">
+      <source src="./static/videos/banner_video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-video is-hidden-tablet is-inline-block-mobile" style="
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+">
+  <video playsinline autoplay muted loop style="
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  ">
+    <source src="./static/videos/banner_video.mp4" type="video/mp4">
+  </video>
+</div>
+  <div class="overlay"></div>
+  <div class="hero-head">
+    <header class="navbar-menu">
+      <div class="container is-size-5" style="max-width: 500px; margin: 0 auto;">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center; gap: 20px;">
+          <a class="navbar-item bilibili-hover" href="https://www.bilibili.com/video/BV1x7QNYtEwy/" target="_blank" style="justify-content: center;">
+            <span class="icon" style="margin-right:5px;">
+              <img src="./static/images/bilibili.svg">
+            </span>
+            <span class="hover-text"></span>
+          </a>
+          <a class="navbar-item" href="#ENvideo" style="justify-content: center;">
+            <span class="icon" style="margin-right:5px;">
+              <img src="./static/images/videologo.svg">
+            </span>
+            <span>Video</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title is-size-8-mobile" style="font-size: 5rem;">
+        HumanoidExo
+      </h1>
+      <h1 class="title is-1 publication-title is-size-5-mobile" style="font-size: 2.8rem;">
+        <small>Whole-Body Humanoid  Manipulation via Wearable Exoskeleton</small>
+      </h1>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="container has-text-centered">
+      <h1 class="title  is-size-7-mobile" style="font-size: 1.5rem;">
+        ▼ Scroll down the page to find more ▼<br><br>
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" id = "nubot"href="https://github.com/nubot-nudt" target="_blank">
+      NuBot&nbsp
+      <span class="icon">
+        <i class="fab fa-github"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://nubot-nuexo.github.io/" target="_blank">
+            ⭐️NuExo: Data Collection and Teleoperation
+          </a>
+          <a class="navbar-item">
+            NuExo Patent 1: ZL 2025 1 0043892.1
+          </a>
+          <a class="navbar-item">
+            NuExo Patent 2: ZL 2025 1 0043930.3
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title is-size-3-mobile">HumanoidExo: Scalable Whole-Body Humanoid  Manipulation via Wearable Exoskeleton</h1>
+          <div class="is-size-4 publication-authors is-size-5-mobile">
+              <span class="author-block"><a href="mailto:zhongrui19@nudt.edu.cn" target="_blank">Rui Zhong</a><sup>*,1,2</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Yichen Zhu</a><sup>*,†,2</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Yizhe Sun</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Junjie Wen</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Jinming Li</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Chuang Cheng</a><sup>†,1</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Wei Dai</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Zhiwen Zeng</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Huimin Lu</a><sup>†,1</sup>,</span>
+              <span class="author-block"><a href="NONE" target="_blank">Yi Xu</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-9 publication-authors is-size-7-mobile">
+            <span class="author-block">* Equal Contribution  &nbsp;&nbsp; &nbsp;&nbsp;   † Corresponding Authors</span>
+          </div>
+
+          <div class="is-size-4 publication-authors is-size-6-mobile">
+            <span class="author-block"><small> <sup>1</sup>National University of Defense Technology, <sup>2</sup>Midea Group</small></span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF -->
+              <span class="link-block">
+                <a href="static/pdfs/NuExo.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- ArXiv Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2503.10554" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- bilibili Link -->
+              <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1x7QNYtEwy/" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon" style="margin-right:5px;">
+                  <img src="./static/images/bilibili.svg">
+                </span>
+                <span>Bilibili</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            A significant bottleneck in humanoid policy learning is the acquisition of <b>large-scale, diverse datasets</b>, as collecting 
+            reliable real-world data remains both difficult and cost-prohibitive. To address this limitation, we introduce <b>HumanoidExo</b>, 
+            a novel system that transfers human motion to whole-body humanoid data. HumanoidExo offers a high-efficiency solution that minimizes 
+            the embodiment gap between the human demonstrator and the robot, thereby tackling the scarcity of whole-body humanoid data. By facilitating 
+            the collection of more voluminous and diverse datasets, our approach significantly enhances the performance of humanoid robots in dynamic, 
+            real-world scenarios. We evaluated our method across three challenging real-world tasks: table-top manipulation, manipulation integrated with 
+            stand-squat motions, and whole-body manipulation. Our results empirically demonstrate that HumanoidExo is a crucial addition to real-robot data, 
+            as it enables the humanoid policy to generalize to novel environments, learn complex whole-body control from only five real-robot demonstrations, 
+            and even acquire new skills (i.e., walking) solely from HumanoidExo data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <h2 class="title is-3" id="ENvideo">Video</h2>
+          <div class="publication-video">
+              <video src="./static/videos/video0.mp4" controls muted>
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+      </div>
+  </div>
+    <!--/ Video. -->
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3">HumaniodExo System</h3>
+          <h2 class="title is-4">Hardware overview</h2>
+
+          <!-- Hardware overview. -->
+          <div class="content has-text-justified">
+            <div class="has-text-centered">
+              <img src="./static/images/hardware.png" alt="Hardware overview" style="max-width: 90%; height: auto;" />
+            </div>
+            <p>
+              We integrated a Mid-360 LiDAR for acquiring exoskeleton motion
+              odometry. For visual information acquisition, we added two wrist cameras to capture new operational perspectives and
+              enrich environmental perception. These cameras, installed on the Dexmo force-feedback gloves, were mounted at angles
+              identical to those of the robot's cameras.
+            </p>
+          </div>
+
+          <br>
+          <!--/ Hardware overview. -->
+
+          <!-- Key parameters. -->
+          <div class="content has-text-justified">
+            <div class="has-text-centered">
+              <img src="./static/images/key_parameters.png" alt="Key parameters" style="max-width: 85%; height: auto;" />
+            </div>
+            <p>
+              HumanoidExo is specifically designed to read all seven
+              joints of the human arm. The rotational axes of its exoskeleton arm are precisely aligned with the corresponding axes
+              of the human joints, making the exoskeleton isomorphic
+              to the human arm. 
+              Since the HumanoidExo system adopts a joint space control method with angle
+              remapping, we redesigned the exoskeleton's key parameters to match the arm length of the Unitree G1 robot.
+            </p>
+          </div>
+          <!--/ Key parameters. -->
+          <br>
+
+          <h2 class="title is-4">HE-VLA: A Whole-Body Humanoid Policy Learning Method</h2>
+
+          <div class="content has-text-justified">
+            <div class="has-text-centered">
+              <img src="./static/images/vla.png" alt="HE-VLA" style="max-width: 95%; height: auto;" />
+            </div>
+            <p>
+              Our approach, namely HumanoidExo-VLA (HE-VLA in
+              short), consists of two key components: a pre-trained Vision-
+              Language-Action (VLA) model that learns foundational
+              whole-body motion control, and a reinforcement learning
+              method that ensures robust whole-body balance. To tackle 
+              the challenge of manipulating complex humanoid skills, we leverage
+              <a href="https://dex-vla.github.io/" target="_blank">DexVLA</a>, a pre-trained vision-language-action model,
+              for the tasks described in our experiments.
+            </p>
+
+            <div class="has-text-centered">
+              <img src="./static/images/rl.png" alt="RL" style="max-width: 60%; height: auto;" />
+            </div>
+            <p>
+            Relying
+            solely on imitation learning to directly output joint positions
+            for whole-body control introduces significant stability risks.
+            Minor deviations from the learned trajectories can result in
+            falls, posing a threat of catastrophic damage to the robot and
+            its environment. To overcome this limitation, we leverage
+            reinforcement learning to train a robust whole-body loco-
+            manipulation controller. This controller is responsible for
+            maintaining dynamic balance while executing commands for
+            base speed, yaw rate, and a target torso height.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3">Data Collection</h3>
+          <h2 class="title is-4">HumanoidExo in Daily Scene</h2>
+
+          <!-- Data Collection -->
+          <div class="content has-text-justified">
+            <div class="video-grid" style="width: 95%; margin: 0 auto;">
+              <div class="video-cell">
+                <video playsinline autoplay muted loop>
+                  <source src="./static/videos/daily_scene_1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">In Café</div>
+              </div>
+              <div class="video-cell">
+                <video playsinline autoplay muted loop>
+                  <source src="./static/videos/daily_scene_2.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Picking up fruit</div>
+              </div>
+              <div class="video-cell">
+                <video playsinline autoplay muted loop>
+                  <source src="./static/videos/daily_scene_3.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Folding clothes</div>
+              </div>
+              <div class="video-cell">
+                <video playsinline autoplay muted loop>
+                  <source src="./static/videos/daily_scene_4.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Walking in the wild</div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <!--/ Data Collection -->
+
+          
+          <!-- Data Replay -->
+          <h2 class="title is-4">Data Replay</h2>
+
+          <div class="content has-text-justified">
+            <div class="video-cell" style="width: 95%; margin: 0 auto;">
+              <video playsinline autoplay muted loop>
+                <source src="./static/videos/replay.mp4" type="video/mp4">
+              </video>
+              <div class="video-overlay left">HumanoidExo data collection & Data replay</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3">Experiments </h3>
+          <h2 class="title is-4">Task1: PlaceToy</h2>
+          <p>
+            This is a tabletop manipulation task. The
+            robot is required to pick up a toy, whose position is
+            randomized on its left or right side, and place it into
+            a tray at the center. 
+            In the following videos, the HE-VLA model was trained with 
+            <b>5 teleoperated data + 195 HumanoidExo data</b>.</p>
+          <br>
+
+          <div class="container is-max-desktop">
+            <div id="results-carousel" class="carousel results-carousel">
+              
+              <div class="item">
+                <div class="caption-external">
+                  <h3 class="caption-title is-size-8-mobile">
+                    Laboratory Scene<br>
+                    <span class="green-text"><small>PlaceToy</small></span>
+                  </h3>
+                </div>
+                <div class="video-hover-container">
+                  <div class="video-cell">
+                    <video playsinline autoplay muted loop>
+                      <source src="./static/videos/task1_1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay right">Autonomous 2x</div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="item">
+                <div class="caption-external">
+                  <h3 class="caption-title is-size-8-mobile">
+                    Unseen Environment<br>
+                    <span class="green-text"><small>Unseen item</small></span>
+                  </h3>
+                </div>
+                <div class="video-hover-container">
+                  <div class="video-cell">
+                    <video playsinline autoplay muted loop>
+                      <source src="./static/videos/task1_2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay right">Autonomous 2x</div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="item">
+                <div class="caption-external">
+                  <h3 class="caption-title is-size-8-mobile">
+                    Unseen Environment<br>
+                    <span class="green-text"><small>Unseen tray & Unseen table</small></span>
+                  </h3>
+                </div>
+                <div class="video-hover-container">
+                  <div class="video-cell">
+                    <video playsinline autoplay muted loop>
+                      <source src="./static/videos/task1_3.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay right">Autonomous 2x</div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="item">
+                <div class="caption-external">
+                  <h3 class="caption-title is-size-8-mobile">
+                    Unseen Environment<br>
+                    <span class="green-text"><small>Unseen item & Unseen table</small></span>
+                  </h3>
+                </div>
+                <div class="video-hover-container">
+                  <div class="video-cell">
+                    <video playsinline autoplay muted loop>
+                      <source src="./static/videos/task1_4.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay right">Autonomous 2x</div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <br>
+          <br>
+          <!--/ Task1: PlaceToy -->
+
+          
+          <!-- Task2: Walk & PlaceToy -->
+          <h2 class="title is-4">Task2: Walk & PlaceToy</h2>
+
+          <div class="content has-text-justified">
+
+            <p>
+              We designed this experiment that builds
+              upon the previous tabletop manipulation setup. We collected
+              195 new HumanoidExo demonstrations of a compound task:
+              walking to the table, stopping, and then executing the 'Place
+              Toy' action. The policy was then trained on a mixed dataset
+              containing these 195 new HumanoidExo demonstrations and
+              the same 5 teleoperated demonstrations from the previous
+              experiment. Crucially, these five teleoperated demonstrations
+              only contain the stationary manipulation portion of the task;
+              they include no walking. Therefore, <b>any walking ability
+              exhibited by the final policy must be learned exclusively from
+              the HumanoidExo data</b>.
+            </p>
+
+            <div class="content has-text-justified">
+              <div class="video-grid" style="width: 95%; margin: 0 auto;">
+                <div class="video-cell">
+                  <video playsinline autoplay muted loop>
+                    <source src="./static/videos/task2_2.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay left">2m</div>
+                  <div class="video-overlay right">Autonomous 3x</div>
+                </div>
+                <div class="video-cell">
+                  <video playsinline autoplay muted loop>
+                    <source src="./static/videos/task2_3.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay left">2.5m</div>
+                  <div class="video-overlay right">Autonomous 3x</div>
+                </div>
+                <div class="video-cell">
+                  <video playsinline autoplay muted loop>
+                    <source src="./static/videos/task2_4.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay left">3.5m</div>
+                  <div class="video-overlay right">Autonomous 3x</div>
+                </div>
+                <div class="video-cell">
+                  <video playsinline autoplay muted loop>
+                    <source src="./static/videos/task2_5.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay left">8m</div>
+                  <div class="video-overlay right">Autonomous 3x</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content has-text-justified">
+              <div class="video-cell" style="width: 95%; margin: 0 auto;">
+                <video playsinline autoplay muted loop controls>
+                  <source src="./static/videos/task2_1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Recovery from human interference</div>
+                <div class="video-overlay right">Autonomous 3x</div>
+              </div>
+            </div>
+
+
+          </div>
+          <!--/ Task2: Walk & PlaceToy -->
+          
+          <br>
+          <br>
+
+          <!-- Task3: PlaceLaundry -->
+          <h2 class="title is-4">Task3: PlaceLaundry</h2>
+          <div class="content has-text-justified">
+            <p>
+              We chose the 'Place Laundry' task, where the
+              robot is required to squat, grasp clothes from a basket,
+              and place them into a washing machine on its right. The
+              robot repeats this process until the basket is empty, then
+              stands up to signal task completion. This task presents
+              several challenges: the clothes are deformable objects that are
+              difficult for dexterous hands to grasp and place entirely inside
+              the machine, which requires the model to exhibit recovery
+              behaviors. Furthermore, the model must use robust visual
+              observation while maintaining whole-body balance to avoid
+              falling during the upper-body task execution.
+
+              Following the methodology of the previous section, 
+              in the following videos, the HE-VLA model was trained with 
+              <b>5 teleoperated data + 195 HumanoidExo data</b>.
+            </p>
+
+            <div class="content has-text-justified">
+              <div class="video-cell" style="width: 95%; margin: 0 auto;">
+                <video playsinline autoplay muted loop controls>
+                  <source src="./static/videos/task3_2.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">PlaceLaundry in household scene</div>
+                <div class="video-overlay right">Autonomous 3x</div>
+              </div>
+
+              <br>
+
+              <div class="video-cell" style="width: 95%; margin: 0 auto;">
+                <video playsinline autoplay muted loop controls>
+                  <source src="./static/videos/task3_1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Long-horizon sequential tasks<br>Autonomous failure recovery</div>
+                <div class="video-overlay right">Autonomous 3x</div>
+              </div>
+            </div>
+
+          </div>
+          <!--/ Task3: PlaceLaundry -->
+
+          <br>
+          <br>
+
+          <!--/ Task4: Task 4: Walking (only on the track)-->
+          <h2 class="title is-4">Task 4: Walking (only on the track)
+            </h2>
+          <div class="content has-text-justified">
+            <p>
+              Beyond the manipulation tasks, we also sought to explore the role of HumanoidExo
+               in robot navigation skill learning. We selected an outdoor environment for data 
+               collection, with the following defined task: the robot was required to continue 
+               walking on a blue track until it exited the track and then stop. <b>All training data 
+               was sourced exclusively from HumanoidExo, with no teleoperated data used. </b>
+               In our experiment, data collected entirely by HumanoidExo was successfully able to 
+               achieve simple autonomous navigation for the robot.
+            </p>
+
+            <div class="content has-text-justified">
+              <div class="video-cell" style="width: 95%; margin: 0 auto;">
+                <video playsinline autoplay muted loop>
+                  <source src="./static/videos/task4.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay left">Outdoor Scenes</div>
+                <div class="video-overlay right">Autonomous 2x</div>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3">Conclusion</h3>
+
+          <!-- Conclusion -->
+          <div class="content has-text-justified">
+            <p>
+              In this work, we addressed the critical data bottleneck
+              that hinders the development of capable, general-purpose
+              humanoid robots. While existing methods like simulation,
+              human videos, and direct teleoperation have advanced the
+              field, they suffer from significant limitations in scalability, 
+              cost, and embodiment mismatch. We introduced HumanoidExo, 
+              a lightweight, wearable exoskeleton system designed 
+              to provide a practical and effective solution for scalable, 
+              whole-body data collection. Our experiments confirm
+              that this approach is highly effective. We've shown that data
+              from HumanoidExo enables policies to generalize to new
+              environments, achieve remarkable data efficiency by learning
+              complex skills from as few as five real-robot demonstrations,
+              and even acquire entirely new skills like walking without
+              any prior robot data. These results validate our system as
+              a powerful paradigm for generating large-scale, high-quality
+              humanoid datasets.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @article{zhong2025humanoidexo,
+        title={HumanoidExo: Scalable Whole-Body Humanoid  Manipulation via Wearable Exoskeleton},
+        author={Rui Zhong, Yichen Zhu, Yizhe Sun, Junjie Wen, Jinming Li, Chuang Cheng, Wei Dai, Zhiwen Zeng, Huimin Lu, Yi Xu},
+        journal={arXiv preprint arXiv:25xx.xxxxx},
+        year={2025}
+      }
+</code></pre>
+  </div>
+</section> 
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <div class="image-wrapper" style="text-align: center;">
+            <!-- <a title='Visit tracker'>
+              <img src='' style="width: 60%;">
+              <br>Image from: <a href="https://clustrmaps.com" target="_blank">clustrmaps.com</a>
+            </a> -->
+          </div>
+
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>. Modified upon original <a href="https://nerfies.github.io/"target="_blank"> Nerfies </a> website
+            (<a href="https://github.com/nerfies/nerfies.github.io" target="_blank">source</a>) and <a href="https://umi-on-legs.github.io/" target="_blank">UMI on Legs</a>.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
